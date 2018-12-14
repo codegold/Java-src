@@ -1,5 +1,5 @@
 //Возврат объекта типа String
-class ErrorMsg {
+class ErrMsg1 {
     String msgs[] = {
             "Output error",
             "Input error",
@@ -7,7 +7,7 @@ class ErrorMsg {
             "Out of range limits"
     };
 
-    String getErrorMsg(int i) { // method
+    String getErrMsg1(int i) { // method
         if(i >=0 & i < msgs.length)
             return msgs[i];
         else
@@ -16,11 +16,11 @@ class ErrorMsg {
     }
 }
 
-class ErrMsg {
+class ErrorMsg {
     public static void main(String[] args) {
-        ErrorMsg err = new ErrorMsg();
+        ErrMsg1 err = new ErrMsg1();
 
-        System.out.println(err.getErrorMsg(2));
-        System.out.println(err.getErrorMsg(72));
+        System.out.println(err.getErrMsg1(2));
+        System.out.println(err.getErrMsg1(72));
     }
 }
