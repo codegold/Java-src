@@ -3,7 +3,10 @@
 // Добавление дополнительных конструкторов в класс TwoDShape.
 // Multilevel hierarchy
 // Применение динамической диспетчеризации методов.
-class TwoDShape {
+
+// Создание абстрактного класса.
+// Теперь класс TwoDShape является абстрактным.
+abstract class TwoDShape {
     private double height; //now vars private
     private double width;
     private String name;
@@ -61,10 +64,12 @@ class TwoDShape {
     }
 
     // Метод area() определен в классе TwoDShape.
-    double area() {
-        System.out.println("area() mest be overridden");
-        return 0.0;
-    }
+
+    // Теперь метод area () является абстрактным.
+    abstract double area();
+        //System.out.println("area() mest be overridden");
+        //return 0.0;
+
 }
 //Подкласс класса TwoDShape для представления треугольников
 // Класс Triangle наследует от класса TwoDShape»
@@ -93,7 +98,7 @@ class Triangle extends TwoDShape {
 
         style = s;
     }
-    // Конструктор с одним аргументом.
+    // Конструктор с одним аргументом для построения треугольника.
     Triangle(double x) {
         super(x, "triangle"); // вызвать конструктор суперкласса с одним аргументом
         style = "isosceles";
@@ -140,9 +145,12 @@ class Triangle extends TwoDShape {
        }*/
        // Подкласс, производный от класса TwoDShape,
        // для представлёния прямоугольников.
+
+
     class Rectangle extends TwoDShape {
            // Default constructor
         Rectangle() {
+
             super();
         }
 
@@ -168,19 +176,20 @@ class Triangle extends TwoDShape {
         }
         // Переопределение метода area() для класса Rectangle.
         double area() {
+
             return getWidth() * getHeight();
         }
     }
 
-    class DynShapes {
+    class AbsShape {
         public static void main(String[] args) {
-            TwoDShape shapes[] = new TwoDShape[5];
+            TwoDShape shapes[] = new TwoDShape[4];
 
             shapes[0] = new Triangle("right", 8.0, 12.0);
             shapes[1] = new Rectangle(10);
             shapes[2] = new Rectangle(10,4);
             shapes[3] = new Triangle(7.0);
-            shapes[4] = new TwoDShape(10,20,"generic");
+            //shapes[4] = new TwoDShape(10,20,"generic");
 
             for (int i=0; i < shapes.length; i++) {
                 System.out.println("object os " + shapes[i].getName());
