@@ -2,9 +2,7 @@
 // Класс, описывающий двумерные объекты,
 // Добавление дополнительных конструкторов в класс TwoDShape.
 // Multilevel hierarchy
-// Применение динамической диспетчеризации методов.
 
-// Создание абстрактного класса.
 // Теперь класс TwoDShape является абстрактным.
 abstract class TwoDShape {
     private double height; //now vars private
@@ -67,7 +65,7 @@ abstract class TwoDShape {
 
     // Теперь метод area () является абстрактным.
     abstract double area();
-        //System.out.println("area() mest be overridden");
+        //System.out.println("area() must be overridden");
         //return 0.0;
 
 }
@@ -244,9 +242,25 @@ class Shapes7 {
         System.out.println("Square - " + t5.area());
         System.out.println();
        */
-
     }
-
+        // Подкласс, производный от класса TwoDShape, для окружностей
+        abstract class Circle extends TwoDShape {
+            // Конструктор по умолчанию
+            Circle() {
+                super();
+            }
+            // Конструктор класса Circle
+            Circle(double x) {
+                super(x, "Circle"); // вызвать конструктор суперкласса
+            }
+            // Создать новый объект из имеющегося объекта
+            Circle(Circle ob) {
+                super(ob); // передать объект конструктору класса TwoDShape
+            }
+            double area() {
+                return (getWidth() / 2) * (getHeight() / 2) * 3.1416;
+            }
+        }
 }
 
 
