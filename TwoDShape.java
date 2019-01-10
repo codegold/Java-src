@@ -85,8 +85,8 @@ class Triangle extends TwoDShape {
         super(); // вызвать конструктор суперкласса по умолчанию
         style = "null";
     }
-            //Constructor
-            // Параметризированный конструктор.
+    //Constructor
+    // Параметризированный конструктор.
     Triangle(String s, double w, double h) {
         // Использование оператора super () для вызова
         // конструктора класса TwoDShape.
@@ -111,8 +111,8 @@ class Triangle extends TwoDShape {
 
     // Переопределение метода area() для класса Triangle.
     double area() {
-        //Из класса Triangle можно обращаться к членам класса
-        // TwoDShape таким же обраэом, как и к собственным членам.
+    //Из класса Triangle можно обращаться к членам класса
+    // TwoDShape таким же обраэом, как и к собственным членам.
         return getHeight() * getWidth() / 2;
     }
 
@@ -195,7 +195,10 @@ class Triangle extends TwoDShape {
                 // для каждой геометрической фигуры в отдельности.
                 System.out.println("Area is " + shapes[i].area());
                 System.out.println();
+
             }
+
+            //System.out.println(TwoDShape.Circle(2.33));
 /*
 class Shapes7 {
     public static void main(String[] args) {
