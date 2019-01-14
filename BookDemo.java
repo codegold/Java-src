@@ -1,20 +1,26 @@
 // Простая программа, демонстрирующая применение пакета.
 // Этот файл является частью пакета bookpack.
-package bookpack;
-// Простая программа, демонстрирующая применение пакета.
-// Этот файл является частью пакета bookpack.
-class Book {
-    private String title;
-    private String author;
-    private int pubDate;
 
-    Book(String t, String a, int d){
+// Класс Book, видоизмененный для открытого доступа
+// Класс Book и некоторые его члены должны быть объявлены открытыми,
+// чтобы ими можно было пользоваться в других пакетах.
+
+package bookpack;
+
+class Book {
+    // При объявлении этих переменных использован
+    // модификатор доступа protected
+    protected String title;
+    protected String author;
+    protected int pubDate;  //now that variables inited as PROTECTED
+//Now constructor init as open
+    public Book(String t, String a, int d){
         title = t;
         author = a;
         pubDate = d;
     }
-
-    void show() {
+//Now method is open
+    public void show() {
         System.out.println(title);
         System.out.println(author);
         System.out.println(pubDate);
@@ -35,5 +41,10 @@ class BookDemo {
 
         for(int i = 0; i < books.length; i++) books[i].show();
 
+        System.out.printf("This is string, %10d \n", 30);
+        System.out.printf("This is string, %10d \n", 5);
+        System.out.printf("This is string, %-10d \n", 30);
+        System.out.printf("This is string, %-10d \n", 5);
+        System.out.printf("This is string, %d \n", 5);
     }
 }
