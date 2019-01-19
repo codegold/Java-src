@@ -1,0 +1,3 @@
+package Lesson35AnonymClasses;
+
+
